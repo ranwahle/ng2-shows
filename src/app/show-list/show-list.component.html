@@ -2,6 +2,6 @@
   <div class="show" *ngFor="let show of shows" (click)="navigate(show)">
     <img [src]="show.image.medium"><br>
     <span>{{show.name}}</span><br>
-    <span>{{show.genres.join(',')}}, </span>
+    <span>{{show.genres | joinpipe}}, </span>
   </div>
 </div>
