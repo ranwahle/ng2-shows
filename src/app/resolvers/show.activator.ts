@@ -9,10 +9,14 @@ export class ShowActivator implements CanActivate {
     constructor(private topBarOrchestrator: TopBarOrchestrator) {
     }
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-        console.log('route', route);
+    canActivate(route: ActivatedRouteSnapshot,
+                state: RouterStateSnapshot): Observable<boolean> | boolean {
+
         this.topBarOrchestrator.store.setIsBlocked(!this.topBarOrchestrator.store.isLoggedIn);
-        return this.topBarOrchestrator.store.isLoggedIn;
+         const result = this.topBarOrchestrator.store.isLoggedIn;
+
+         console.log('can activate', result);
+        return result;
     }
 
 }

@@ -9,8 +9,10 @@ export class ShowResolver implements Resolve<any> {
     constructor(private showOrchestrator: ShowsOrchestrator) {
     }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | any {
-        return this.showOrchestrator.getShowById(+route.params[ 'id' ]);
+    resolve(route: ActivatedRouteSnapshot,
+            state: RouterStateSnapshot): Observable<any> | any {
+        console.log('some');
+        return this.showOrchestrator.getShowById(+route.params[ 'showId' ]);
     }
 
 }

@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, Input } from '@angular/core';
 import { TopBarOrchestrator } from '../../state/top-bar/top-bar.orchestrator';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { TextRangeValidator } from 'app/shows/custom-form-validators';
@@ -9,7 +9,7 @@ import { TextRangeValidator } from 'app/shows/custom-form-validators';
     templateUrl: 'search.component.html'
 })
 export class SearchComponent implements OnInit {
-    criteria: string;
+    @Input() criteria: string;
     formGroup: FormGroup;
 
     @Output()
@@ -24,7 +24,7 @@ export class SearchComponent implements OnInit {
     }
 
     get textRangeErrors() : string{
-        return this.formGroup.controls['search'].errors['textRange']
+        return this.formGroup.controls['search'].errors['textRange'];
     }
 
     get searchErrors() : any {

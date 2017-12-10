@@ -10,6 +10,8 @@ import { TopBarOrchestrator } from '../../state/top-bar/top-bar.orchestrator';
 })
 export class ShowListComponent implements OnInit {
 
+    tempSearch: string;
+
     constructor(private router: Router,
                 private activatedRoute: ActivatedRoute,
                 private showOrchestrator: ShowsOrchestrator,
@@ -23,8 +25,10 @@ export class ShowListComponent implements OnInit {
     }
 
     navigate(show: any) {
-        console.log('navigating');
-        this.router.navigate([ 'show', show.id ], {relativeTo: this.activatedRoute});
+
+        this.router.navigate(
+            [ 'show', show.id ],
+            {relativeTo: this.activatedRoute});
     }
 
     doSearch() {

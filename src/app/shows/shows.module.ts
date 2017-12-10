@@ -11,6 +11,7 @@ import { NgPipesModule } from 'ngx-pipes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowActivator } from 'app/resolvers/show.activator';
 import { ShowResolver } from 'app/shows/resolvers/show.resolver';
+import { CanDeactivateList } from 'app/resolvers/can-deactivate-liste';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { ShowResolver } from 'app/shows/resolvers/show.resolver';
         FormsModule,
         ReactiveFormsModule
     ],
-    providers: [ ShowService, ShowActivator, ShowResolver ],
+    providers: [ ShowService, ShowActivator, ShowResolver, CanDeactivateList ],
     declarations: [ ShowListComponent, ShowDetailsComponent, SearchComponent ]
 })
 export class ShowsModule {
