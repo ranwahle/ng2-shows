@@ -3,6 +3,7 @@ import { ShowStore } from './shows.store';
 import { ShowService } from './show.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/of';
 
 @Injectable()
 export class ShowsOrchestrator {

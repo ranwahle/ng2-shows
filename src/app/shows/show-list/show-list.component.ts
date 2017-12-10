@@ -1,16 +1,17 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { ShowsOrchestrator } from "../state/shows.orchestrator";
-import { TopBarOrchestrator } from "../../state/top-bar/top-bar.orchestrator";
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ShowsOrchestrator } from '../state/shows.orchestrator';
+import { TopBarOrchestrator } from '../../state/top-bar/top-bar.orchestrator';
 
 @Component({
     selector: 'show',
     templateUrl: 'show-list.component.html',
-    styleUrls: ['show-list.component.scss'],
+    styleUrls: [ 'show-list.component.scss' ],
 })
 export class ShowListComponent implements OnInit {
 
     constructor(private router: Router,
+                private activatedRoute: ActivatedRoute,
                 private showOrchestrator: ShowsOrchestrator,
                 private topBarOrchestrator: TopBarOrchestrator) {
     }
@@ -22,7 +23,8 @@ export class ShowListComponent implements OnInit {
     }
 
     navigate(show: any) {
-        this.router.navigate(['shows/show', show.id]);
+        console.log('navigating');
+        this.router.navigate([ 'show', show.id ], {relativeTo: this.activatedRoute});
     }
 
     doSearch() {

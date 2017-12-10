@@ -9,6 +9,8 @@ import { ShowsCommonModule } from 'app/common/common.module';
 import { MobxAngularModule } from 'mobx-angular';
 import { NgPipesModule } from 'ngx-pipes';
 import { FormsModule } from '@angular/forms';
+import { ShowActivator } from 'app/resolvers/show.activator';
+import { ShowResolver } from 'app/shows/resolvers/show.resolver';
 
 
 @NgModule({
@@ -20,7 +22,7 @@ import { FormsModule } from '@angular/forms';
         NgPipesModule,
         FormsModule
     ],
-    providers: [ ShowService ],
+    providers: [ ShowService, ShowActivator,  ShowResolver ],
     declarations: [ShowListComponent, ShowDetailsComponent, SearchComponent]
 })
 export class ShowsModule {

@@ -27,10 +27,7 @@ import { MobxAngularModule } from 'mobx-angular';
         ShowsCommonModule,
         ROUTING
     ],
-    providers: [
-        ShowResolver,
-        ShowActivator
-    ],
+
     bootstrap: [ AppComponent ]
 })
 export class AppModule {
