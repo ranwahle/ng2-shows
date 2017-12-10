@@ -8,7 +8,7 @@ import { SearchComponent } from 'app/shows/search/search.component';
 import { ShowsCommonModule } from 'app/common/common.module';
 import { MobxAngularModule } from 'mobx-angular';
 import { NgPipesModule } from 'ngx-pipes';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowActivator } from 'app/resolvers/show.activator';
 import { ShowResolver } from 'app/shows/resolvers/show.resolver';
 
@@ -20,10 +20,11 @@ import { ShowResolver } from 'app/shows/resolvers/show.resolver';
         ShowsCommonModule,
         MobxAngularModule,
         NgPipesModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
-    providers: [ ShowService, ShowActivator,  ShowResolver ],
-    declarations: [ShowListComponent, ShowDetailsComponent, SearchComponent]
+    providers: [ ShowService, ShowActivator, ShowResolver ],
+    declarations: [ ShowListComponent, ShowDetailsComponent, SearchComponent ]
 })
 export class ShowsModule {
 }

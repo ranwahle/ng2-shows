@@ -1,6 +1,13 @@
 <div class="row offset-md-1 main">
-    <input [(ngModel)]="criteria" type="text" placeholder="search for a show" (keydown.enter)="doSearch()">
+    <form (submit)="doSearch()" [formGroup]="formGroup">
+    <input [(ngModel)]="criteria" type="text" formControlName="search"
+           placeholder="search for a show" >
+        <span *ngIf="searchHasErrors" class="error">
+           {{searchErrors | json}}
+        </span>
     <button type="submit" class="btn btn-success-outline"
             [disabled]="!topBarOrchestrator.store.isLoggedIn"
-            (click)="doSearch()">search</button>
+           >search</button>
+    </form>
+
 </div>
