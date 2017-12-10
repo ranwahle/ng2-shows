@@ -1,25 +1,18 @@
-import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
-import { Routes, RouterModule } from "@angular/router";
-import { ShowListComponent } from "./show-list/show-list.component";
-import { ShowDetailsComponent } from "./show-details/show-details.component";
-import { ActorDetailsComponent } from "./actor-details/actor-details.component";
-import { ShowResolver } from "./resolvers/show.resolver";
-import { ShowActivator } from "./resolvers/show.activator";
+import { ModuleWithProviders } from '@angular/core/src/metadata/ng_module';
+import { RouterModule, Routes } from '@angular/router';
+import { ActorDetailsComponent } from './actor-details/actor-details.component';
 
 
 export const ROUTES: Routes = [
     {path: '', redirectTo: 'showlist', pathMatch: 'full'},
     {
         path: 'showlist',
-        component: ShowListComponent
+        loadChildren: './shows/shows.module#ShowsModule'
+
     },
     {
         path: 'show/:id',
-        component: ShowDetailsComponent,
-        canActivate: [ShowActivator],
-        resolve: {
-            show: ShowResolver
-        }
+        loadChildren: './shows/shows.module#ShowsModule'
     },
     {
         path: 'actor/:id',

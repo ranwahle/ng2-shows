@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { ShowsOrchestrator } from "../state/shows/shows.orchestrator";
-import { TopBarOrchestrator } from "../state/top-bar/top-bar.orchestrator";
+import { ShowsOrchestrator } from "../state/shows.orchestrator";
+import { TopBarOrchestrator } from "../../state/top-bar/top-bar.orchestrator";
 
 @Component({
     selector: 'show',
@@ -22,7 +22,7 @@ export class ShowListComponent implements OnInit {
     }
 
     navigate(show: any) {
-        this.router.navigate(['show', show.id]);
+        this.router.navigate(['shows/show', show.id]);
     }
 
     doSearch() {

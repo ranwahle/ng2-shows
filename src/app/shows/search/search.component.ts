@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter, OnInit } from "@angular/core";
-import { TopBarOrchestrator } from "../state/top-bar/top-bar.orchestrator";
+import { TopBarOrchestrator } from "../../state/top-bar/top-bar.orchestrator";
 
 @Component({
     selector: 'search',

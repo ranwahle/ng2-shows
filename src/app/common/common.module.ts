@@ -1,25 +1,24 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
-import { HttpModule } from "@angular/http";
-import { ShowsStateModule, ShowsStateTestModule } from "../state/shows/shows-state.module";
-import { ActorsStateModule, ActorsStateTestModule } from "../state/actors/actors-state.module";
-import { TopBarStateModule, TopBarStateTestModule } from "../state/top-bar/top-bar-state.module";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { ShowsStateModule, ShowsStateTestModule } from '../shows/state/shows-state.module';
+import { ActorsStateModule, ActorsStateTestModule } from '../state/actors/actors-state.module';
+import { TopBarStateModule, TopBarStateTestModule } from '../state/top-bar/top-bar-state.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-    declarations: [
-    ],
+    declarations: [],
     imports: [
-        BrowserModule,
         FormsModule,
+        CommonModule,
         HttpModule,
         ShowsStateModule,
         ActorsStateModule,
         TopBarStateModule,
     ],
     providers: [],
-    exports: [
-    ]
+    exports: []
 })
 export class ShowsCommonModule {
 

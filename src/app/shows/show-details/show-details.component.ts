@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { ShowsOrchestrator } from "../state/shows/shows.orchestrator";
-import { ActorOrchestrator } from "../state/actors/actor.orchestrator";
+import { ShowsOrchestrator } from "../state/shows.orchestrator";
+import { ActorOrchestrator } from "../../state/actors/actor.orchestrator";
 
 @Component({
     selector: 'show-details',
