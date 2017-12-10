@@ -1,7 +1,8 @@
-import { Injectable } from "@angular/core";
-import { ShowStore } from "./shows.store";
-import { ShowService } from "./show.service";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { ShowStore } from './shows.store';
+import { ShowService } from './show.service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ShowsOrchestrator {
@@ -21,11 +22,12 @@ export class ShowsOrchestrator {
             return Observable.of(this.store.currentShow);
         }
 
-        return this.dataService.getShowById(showId)
-            .map(show => {
-                this.store.setCurrentShow(show);
-                return show;
-            })
+        const showObservable = this.dataService.getShowById(showId);
+
+        return showObservable.map(show => {
+            this.store.setCurrentShow(show);
+            return show;
+        });
     }
 
 
