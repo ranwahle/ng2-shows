@@ -3,6 +3,7 @@ import { ShowStore } from './shows.store';
 import { ShowService } from './show.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import {of} from "rxjs/index";
 
 @Injectable()
 export class ShowsOrchestrator {
@@ -19,7 +20,7 @@ export class ShowsOrchestrator {
 
     getShowById(showId: number): Observable<any> {
         if (this.store.currentShow.id === showId) {
-            return Observable.of(this.store.currentShow);
+            return of(this.store.currentShow);
         }
 
         const showObservable = this.dataService.getShowById(showId);
